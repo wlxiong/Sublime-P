@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>name</key>
+    <string>Global Symbols</string>
+    <key>scope</key>
+    <string>source.p entity.name.function.p, source.p entity.name.struct.p, source.p entity.name.enum.p, source.p entity.name.class.p, source.p entity.name.interface.p, source.p entity.name.impl.p</string>
+    <key>settings</key>
+    <dict>
+      <key>showInSymbolList</key>
+      <integer>1</integer>
+      <key>showInIndexedSymbolList</key>
+      <integer>1</integer>
+    </dict>
+  </dict>
+</plist>
