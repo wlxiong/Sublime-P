@@ -6,6 +6,69 @@ uuid: 02d90f6f-553b-4a22-a121-a8ddeb6dade4
 
 
 patterns:
+- name: meta.function.p
+  # function
+  begin: '^ *(\bfun\b)'
+  beginCaptures:
+    '1': {name: storage.type.function}
+  end: \(
+  patterns:
+  - name: entity.name.function.p
+    match: \w+
+- name: meta.struct.p
+  # type
+  begin: '^ *(\btype\b)'
+  beginCaptures:
+    '1': {name: storage.type.struct}
+  end: \=
+  patterns:
+  - name: entity.name.struct.p
+    match: \w+
+- name: meta.enum.p
+  # enum
+  begin: '^ *(\benum\b)'
+  beginCaptures:
+    '1': {name: storage.type.enum}
+  end: \{
+  patterns:
+  - name: entity.name.enum.p
+    match: \w+
+- name: meta.class.p
+  # machine
+  begin: '^ *(\bmachine\b)'
+  beginCaptures:
+    '1': {name: storage.type.class}
+  end: \{
+  patterns:
+  - name: entity.name.class.p
+    match: \w+
+- name: meta.label.p
+  # state
+  begin: '^ *(start)? *(\bstate\b)'
+  beginCaptures:
+    '1': {name: storage.type.label}
+  end: \{
+  patterns:
+  - name: entity.name.label.p
+    match: \w+
+- name: meta.interface.p
+  # event
+  begin: '^ *(\bevent\b)'
+  beginCaptures:
+    '1': {name: storage.type.interface}
+  end: '\:'
+  patterns:
+  - name: entity.name.interface.p
+    match: \w+
+- name: meta.impl.p
+  # event handler
+  begin: '^ *(\bon\b)'
+  beginCaptures:
+    '1': {name: storage.type.impl}
+  end: do|goto
+  patterns:
+  - name: entity.name.impl.p
+    match: \w+
 - name: keyword.control
   match: \bif\b|\belse\b|\bwhile\b|\breturn\b
 - name: keyword
@@ -45,7 +108,6 @@ patterns:
   match: (//).*$\n?
   captures:
     '1': {name: punctuation.definition.comment.p}
-
 
 
 
